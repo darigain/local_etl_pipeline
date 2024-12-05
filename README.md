@@ -58,3 +58,4 @@ Whether you are building dashboards, developing predictive models, or exploring 
 3. **Weather**: Includes forecasts like temperature, humidity, and weather descriptions for each city.
 4. **Airports**: Lists nearby airports with ICAO codes, names, and city associations.
 5. **Flights**: Details flight schedules, including arrival times, departure airports, and flight numbers.
+![database](https://github.com/darigain/local_etl_pipeline/blob/57fc8870e218c02ab1b894e51e6e5e11f27804e7/visuals/database_schema.png)
