@@ -1,61 +1,102 @@
-# **ETL Pipeline for Weather, Flights, and City Insights**
+# ETL Pipeline for Weather, Flights, and City Insights
 
-## **Overview**
+## 🌐 Overview
+
 This repository showcases an ETL (Extract, Transform, Load) pipeline designed to collect, process, and integrate data about weather, flights, and city demographics. The project demonstrates how to build a reliable data pipeline for extracting external data, transforming it into usable formats, and loading it into a relational database for analysis and insights.
-
-Why does this matter? By integrating weather forecasts, flight schedules, and city demographics, the pipeline supports practical use cases such as:
-- Understanding weather trends to predict demand for outdoor services.
-- Analyzing flight schedules to anticipate tourist influx.
-- Leveraging city population and location data for urban planning or mobility optimization.
-
-Whether you are building dashboards, developing predictive models, or exploring urban trends, this pipeline provides a solid foundation for data-driven decision-making.
 
 ---
 
-## **Data Highlights**
-### **Weather Data**:
-- Collected real-time forecasts for selected cities using the OpenWeather API.
+## 📊 Data Highlights
+
+### **Weather Data** 🌤️
+- Real-time forecasts for selected cities using the **OpenWeather API**.
 - Includes temperature, humidity, wind speed, and weather descriptions for actionable insights.
 
-### **Flight Data**:
-- Retrieved information on scheduled arrivals for nearby airports via the Aerodatabox API.
+### **Flight Data** ✈️
+- Scheduled arrivals for nearby airports via the **Aerodatabox API**.
 - Provides key data points like flight numbers, departure airports, and scheduled arrival times.
 
-### **City Insights**:
-- Scraped city population, latitude, and longitude from Wikipedia.
+### **City Insights** 🏙️
+- City population, latitude, and longitude scraped from **Wikipedia**.
 - Data includes city names, countries, and geographic coordinates, enabling location-based analysis.
 
 ---
 
-## **Features**
-- **Extract**:
-  - Utilizes APIs (OpenWeather, Aerodatabox) and web scraping to gather data.
-  - Combines structured and semi-structured data sources into a cohesive dataset.
-- **Transform**:
-  - Cleans and formats raw data, such as converting geographic coordinates from DMS to decimal format.
-  - Ensures compatibility across APIs and database systems.
-- **Load**:
-  - Stores processed data in a relational MySQL database for easy access and analysis.
-  - Organizes data into normalized tables for weather, flights, and cities.
+## 🛠️ Languages and Tools
 
----
-
-## **Languages and Tools**
 - **Languages**: Python, SQL
 - **APIs**: OpenWeather API, Aerodatabox API
 - **Libraries**:
   - `requests` and `BeautifulSoup` for data extraction
-  - `pandas` for transformation and data handling
+  - `pandas` for data transformation
   - `sqlalchemy` for database integration
-- **Database**: MySQL for relational data storage
+  - `functions-framework` for Google Cloud Functions
+  - `pymysql` for MySQL database connections in the cloud
+- **Databases**: MySQL, Google Cloud SQL (MySQL)
 
 ---
 
-## **Database Schema**
-### **Tables**:
-1. **Cities**: Contains city names, countries, and geographic coordinates.
-2. **Population**: Tracks city population data with timestamps for historical insights.
-3. **Weather**: Includes forecasts like temperature, humidity, and weather descriptions for each city.
-4. **Airports**: Lists nearby airports with ICAO codes, names, and city associations.
-5. **Flights**: Details flight schedules, including arrival times, departure airports, and flight numbers.
-![database](https://github.com/darigain/local_etl_pipeline/blob/57fc8870e218c02ab1b894e51e6e5e11f27804e7/visuals/database_schema.png)
+## 🚀 Quick Step-by-Step Instructions
+
+### 🖥️ **Local Database Setup**
+
+1. **Install Dependencies**:
+   - Install **Python 3.x** from [python.org](https://www.python.org/downloads/).
+   - Install **MySQL** from [mysql.com](https://dev.mysql.com/downloads/installer/).
+
+2. **Install Required Libraries**:
+3. **Set Up MySQL**:
+   - Use **MySQL Workbench** for managing the database.
+   - Create a new database schema using the provided script `database_schema.sql`
+
+4. **Create API Keys**:
+   - Obtain API keys for **OpenWeather** and **Aerodatabox**.
+   - Store them securely in ![**`Keys_cloud_function.py`**](Keys_cloud_function.py).
+
+5. **Run the ETL Pipeline**:
+   - Open **`etl_pipeline.ipynb`** in your preferred IDE (Jupyter Notebook, VSCode, etc.).
+   - Execute the cells to run the ETL process locally.
+
+6. **Automate Locally**:
+   - Use **Task Scheduler** (Windows) or **Cron Jobs** (Mac/Linux) to automate the pipeline.
+
+7. 🎉 **Database Organized**:
+   - Your data is now organized in the local MySQL database.
+  ![Local Database Schema](visuals/database_schema.png)
+
+---
+
+### ☁️ **Cloud Database Setup**
+
+1. **Create a Google Cloud Platform Account**:
+   - Sign up at [Google Cloud](https://cloud.google.com/) (credit/debit card required).
+   - Use the **$300 free trial credits** for 3 months.
+
+![Google Cloud Trial Credits](visuals/trial.png)
+
+2. **Create a MySQL Database**:
+   - Go to the **Cloud SQL** section in GCP.
+   - Create a MySQL instance with minimal settings.
+
+![Cloud MySQL Setup](visuals/db_cloud.png)
+
+3. **Set Up Google Cloud Functions**:
+   - Navigate to **Cloud Functions** in the GCP console.
+   - Create a new function using the provided files:
+     - **`main_cloud_function.py`**
+     - **`Keys_cloud_function.py`**
+     - **`requirements_cloud_function.txt`**
+
+![Cloud Function Setup](visuals/cloud_function_details.png)
+
+4. **Deploy the Function**:
+   - Deploy the function and ensure it executes successfully. 
+![Cloud Function](visuals/cloud_function.png)
+5. **Automate with Cloud Scheduler**:
+   - Set up a **Cloud Scheduler** job to run the function at regular intervals.
+
+![Cloud Scheduler Setup](visuals/scheduler.png)
+
+6. 🎉 **Database Organized in the Cloud**:
+   - Your data is now stored in the cloud MySQL database and updated automatically.
+
