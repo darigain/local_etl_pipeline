@@ -41,17 +41,17 @@ This repository showcases an ETL (Extract, Transform, Load) pipeline designed to
 ### 🖥️ **Local Database Setup**
 
 1. **Install Dependencies**:
-   - Install **Python 3.x** from [python.org](https://www.python.org/downloads/).
-   - Install **MySQL** from [mysql.com](https://dev.mysql.com/downloads/installer/).
+   - Install **Python 3.x**.
+   - Install **MySQL**.
 
-2. **Install Required Libraries**:
+2. **Install Required Libraries**.
 3. **Set Up MySQL**:
    - Use **MySQL Workbench** for managing the database.
    - Create a new database schema using the provided script `database_schema.sql`
 
 4. **Create API Keys**:
    - Obtain API keys for **OpenWeather** and **Aerodatabox**.
-   - Store them securely in ![**`Keys_cloud_function.py`**](Keys_cloud_function.py).
+   - Store them securely in **`Keys_cloud_function.py`**.
 
 5. **Run the ETL Pipeline**:
    - Open **`etl_pipeline.ipynb`** in your preferred IDE (Jupyter Notebook, VSCode, etc.).
@@ -62,7 +62,7 @@ This repository showcases an ETL (Extract, Transform, Load) pipeline designed to
 
 7. 🎉 **Database Organized**:
    - Your data is now organized in the local MySQL database.
-  ![Local Database Schema](visuals/database_schema.png)
+![Local Database Schema](visuals/database_schema.png)
 
 ---
 
