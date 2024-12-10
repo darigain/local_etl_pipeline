@@ -51,10 +51,10 @@ This repository showcases an ETL (Extract, Transform, Load) pipeline designed to
 
 4. **Create API Keys**:
    - Obtain API keys for **OpenWeather** and **Aerodatabox**.
-   - Store them securely in **`Keys_cloud_function.py`**.
+   - Store them securely in `Keys.py`.
 
 5. **Run the ETL Pipeline**:
-   - Open **`etl_pipeline.ipynb`** in your preferred IDE (Jupyter Notebook, VSCode, etc.).
+   - Open `etl_pipeline.ipynb` in your preferred IDE (Jupyter Notebook, VSCode, etc.).
    - Execute the cells to run the ETL process locally.
 
 6. **Automate Locally**:
@@ -83,9 +83,9 @@ This repository showcases an ETL (Extract, Transform, Load) pipeline designed to
 3. **Set Up Google Cloud Functions**:
    - Navigate to **Cloud Functions** in the GCP console.
    - Create a new function using the provided files:
-     - **`main_cloud_function.py`**
-     - **`Keys_cloud_function.py`**
-     - **`requirements_cloud_function.txt`**
+     - `main_cloud_function.py`
+     - `Keys_cloud_function.py`
+     - `requirements_cloud_function.txt`
 
 ![Cloud Function Setup](visuals/cloud_function_details.png)
 
